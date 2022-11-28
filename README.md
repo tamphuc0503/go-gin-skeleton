@@ -9,7 +9,7 @@ A Golang skeleton with Gin webframework that helps developers to have a quick pr
 
 ## STRUCTURE
 
-<img src="https://github.com/tamphuc0503/go-gin-skeleton/blob/dev/gitnew.png" width=400>
+<img src="https://github.com/tamphuc0503/go-gin-skeleton/blob/dev/structure.png" width=400>
 
 ## What it is?
 
@@ -22,7 +22,7 @@ One need to install the latest version of Go i.e 1.12 (Released in Feb 2019) fro
 
 ## Components 
 
-<img src="https://github.com/tamphuc0503/go-gin-skeleton/blob/dev/components.png" width=400>
+<img src="https://github.com/tamphuc0503/go-gin-skeleton/blob/dev/components.gif" width=400>
 
 ### 1. ApiHelpers
 Basically contains the helper functions used in returning api responses, HTTP status codes, default messages etc.
