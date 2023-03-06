@@ -20,11 +20,16 @@ It is a fully managed repository, where one can find all required components in 
 
 One need to install the latest version of Go i.e 1.12 (Released in Feb 2019) from https://golang.org/dl/ and setup GOROOT and GOPATH.
 
+Go tools expect a certain layout of the source code. GOROOT and GOPATH are environment variables that define this layout.
+### GOROOT 
+- GOROOT is a variable that defines where your Go SDK is located. You do not need to change this variable, unless you plan to use different Go versions.
+### GOPATH
+- GOPATH is a variable that defines the root of your workspace. By default, the workspace directory is a directory that is named go within your user home directory (~/go for Linux and MacOS, %USERPROFILE%/go for Windows). GOPATH stores your code base and all the files that are necessary for your development. You can use another directory as your workspace by configuring GOPATH for different scopes. GOPATH is the root of your workspace and contains the following folders:
 ## Components 
 
 <img src="https://github.com/tamphuc0503/go-gin-skeleton/blob/dev/components.gif" width=400>
 
-### 1. ApiHelpers
+### 1. Helpers
 Basically contains the helper functions used in returning api responses, HTTP status codes, default messages etc.
 
 ### 2. Controllers

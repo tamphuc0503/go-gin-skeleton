@@ -1,0 +1,11 @@
+{
+    "gopls": {
+        "ui.semanticTokens": true,
+    },
+    "go.lintOnSave": "file",
+    "go.formatTool": "goimports",
+    "go.docsTool": "gogetdoc",
+    "[go]": {
+        "editor.formatOnSave": true
+    }
+}

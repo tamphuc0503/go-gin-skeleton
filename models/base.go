@@ -1,16 +1,12 @@
 package models
 
 import (
-	"fmt"
-	"github.com/go-sql-driver/mysql"
-	"github.com/jinzhu/gorm"
-	"github.com/joho/godotenv"
-	"log"
-	"os"
+	u "go-gin-skeleton/common"
+	Settings "go-gin-skeleton/main"
 	"time"
-)
 
-var db *gorm.DB
+	"gorm.io/gorm"
+)
 
 //Model is sample of common table structure
 type Model struct {
@@ -20,39 +16,46 @@ type Model struct {
 	DeletedAt *time.Time `sql:"index" json:"deleted_at,omitempty"`
 }
 
-func init() {
+var db *gorm.DB = u.CreateDatabase(Settings.CurrentSettings.DbType,
+	Settings.CurrentSettings.DbName,
+	Settings.CurrentSettings.DbUser,
+	Settings.CurrentSettings.DbHost,
+	Settings.CurrentSettings.DbPassword,
+	Settings.CurrentSettings.DbPort)
 
-	e := godotenv.Load()
-	if e != nil {
-		fmt.Print(e)
-	}
+// func init() {
 
-	username := os.Getenv("db_user")
-	password := os.Getenv("db_pass")
-	dbName := os.Getenv("db_name")
-	dbHost := os.Getenv("db_host")
-	dbPort := os.Getenv("db_port")
+// 	e := godotenv.Load()
+// 	if e != nil {
+// 		fmt.Print(e)
+// 	}
 
-	msql := mysql.Config{}
-	log.Println(msql)
+// 	username := os.Getenv("db_user")
+// 	password := os.Getenv("db_pass")
+// 	dbName := os.Getenv("db_name")
+// 	dbHost := os.Getenv("db_host")
+// 	dbPort := os.Getenv("db_port")
 
-	conn, err := gorm.Open("mysql", username+":"+password+"@tcp("+dbHost+":"+dbPort+")/"+dbName+"?charset=utf8&parseTime=True&loc=Asia%2FKolkata")
+// 	msql := mysql.Config{}
+// 	log.Println(msql)
 
-	if err != nil {
-		fmt.Print(err)
-	}
-	db = conn
+// 	conn, err := gorm.Open("mysql", username+":"+password+"@tcp("+dbHost+":"+dbPort+")/"+dbName+"?charset=utf8&parseTime=True&loc=Asia%2FKolkata")
 
-	//Printing query
-	db.LogMode(true)
+// 	if err != nil {
+// 		fmt.Print(err)
+// 	}
+// 	db = conn
 
-	//Automatically create migration as per model
-	db.Debug().AutoMigrate(
-		&User{},
-	)
-}
+// 	//Printing query
+// 	//	db.LogMode(true)
 
-//GetDB function return the instance of db
-func GetDB() *gorm.DB {
-	return db
-}
+// 	//Automatically create migration as per model
+// 	db.Debug().AutoMigrate(
+// 		&User{},
+// 	)
+// }
+
+// //GetDB function return the instance of db
+// func GetDB() *gorm.DB {
+// 	return db
+// }

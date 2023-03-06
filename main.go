@@ -1,10 +1,11 @@
 package main
 
 import (
-	"GoProject/routers"
 	"fmt"
-	"github.com/joho/godotenv"
+	Routers "go-gin-skeleton/routers"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 //Execution starts from main function

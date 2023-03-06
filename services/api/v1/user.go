@@ -1,9 +1,9 @@
 package v1service
 
 import (
-	u "Golang-Project-Structure/apiHelpers"
-	"Golang-Project-Structure/models"
-	res "Golang-Project-Structure/resources/api/v1"
+	u "go-gin-skeleton/helpers"
+	"go-gin-skeleton/models"
+	res "go-gin-skeleton/resources/api/v1"
 )
 
 //UserService struct

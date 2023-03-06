@@ -1,9 +1,11 @@
 package v1
 
 import (
-	u "GoProject/apiHelpers"
-	v1s "GoProject/services/api/v1"
 	"encoding/json"
+	v1s "go-gin-skeleton/services/api/v1"
+
+	u "go-gin-skeleton/helpers"
+
 	"github.com/gin-gonic/gin"
 )
 

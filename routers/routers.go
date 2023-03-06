@@ -1,11 +1,12 @@
 package routers
 
 import (
-	"./middlewares"
+	"go-gin-skeleton/middlewares"
 
-	apiControllerV2 "./controllers/api/v2"
+	apiControllerV2 "go-gin-skeleton/controllers/api/v2"
 
-	apiControllerV1 "./controllers/api/v1"
+	apiControllerV1 "go-gin-skeleton/controllers/api/v1"
+
 	"github.com/gin-gonic/gin"
 )
 
